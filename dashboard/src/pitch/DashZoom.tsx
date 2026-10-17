@@ -79,7 +79,7 @@ export default function DashZoom({ shot, region, active }: { shot: DashShot; reg
       <div className="dash-window" style={aim?.win}>
         <iframe
           ref={frame}
-          src="/"
+          src="/index.html"
           title="Live dashboard"
           width={W}
           height={H}

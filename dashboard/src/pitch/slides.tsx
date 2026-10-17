@@ -234,7 +234,7 @@ export const SLIDES: Slide[] = [
     notes: 'START THE REAL DOSE NOW from this screen or the phone. Then keep going: the next slides explain what the machine is doing while it doses.',
   },
   {
-    id: 'powder', kicker: 'Chapter 1 · Act precisely', layout: 'wide', layer: 'twin', twin: HOPPER, mode: 'dosing', dim: true,
+    id: 'powder', layout: 'wide', layer: 'twin', twin: HOPPER, mode: 'dosing', dim: true,
     body: () => (
       <>
         <h2 className="title">Real powder fights back</h2>
@@ -245,7 +245,7 @@ export const SLIDES: Slide[] = [
             ['Bridging in the hopper', 'Vibration bursts in the coarse phases.'],
             ['Clogging · no flow', 'Auger turning, weight flat for 4 s: stop and flag.'],
             ['Sticking to surfaces', 'Steep smooth surfaces, tare before every dose.'],
-            ['Overshoot after the stop', 'Stop at target − learned overshoot, trim from below.'],
+            ['Overshoot after the stop', 'Stop at (target − learned overshoot), trim from below.'],
           ].map(([k, v], i) => (
             <div key={k} className="fight-row rise" style={{ animationDelay: `${0.1 + i * 0.09}s` }}>
               <b>{k}</b>
@@ -258,7 +258,7 @@ export const SLIDES: Slide[] = [
     notes: 'These six are exactly the material behaviours the spec book lists. The next slides show how each is handled.',
   },
   {
-    id: 'auger', kicker: 'Chapter 1 · Act precisely', layout: 'left', layer: 'twin', twin: AUGER, mode: 'dosing',
+    id: 'auger', layout: 'left', layer: 'twin', twin: AUGER, mode: 'dosing',
     body: () => (
       <>
         <h2 className="title">Auger + stepper</h2>
@@ -269,7 +269,7 @@ export const SLIDES: Slide[] = [
     notes: 'Auger: one microstep = a small repeatable mass. The tube is drawn see-through so you can watch the screw.',
   },
   {
-    id: 'loadcell', kicker: 'Chapter 1 · Act precisely', layout: 'left', layer: 'twin', twin: LOADCELL, mode: 'idle',
+    id: 'loadcell', layout: 'left', layer: 'twin', twin: LOADCELL, mode: 'idle',
     body: () => (
       <>
         <h2 className="title">The scale is the only truth</h2>
@@ -280,7 +280,7 @@ export const SLIDES: Slide[] = [
     notes: 'Mechanical isolation + filtering. Tare is repeated before each dose.',
   },
   {
-    id: 'phases', kicker: 'Chapter 1 · Act precisely', layout: 'left', layer: 'twin', twin: CUP_VIEW, mode: 'dosing',
+    id: 'phases', layout: 'left', layer: 'twin', twin: CUP_VIEW, mode: 'dosing',
     body: ({ twin }) => {
       const order = ['FAST', 'SLOW', 'FINE', 'SETTLE', 'TRIM'] as const
       const cur = twin.state === 'DONE' ? 'DONE' : twin.phase
@@ -302,7 +302,7 @@ export const SLIDES: Slide[] = [
     notes: 'Narrate the phases as the model doses. Settle waits until the scale is stable; trim adds 1-3 microsteps at a time.',
   },
   {
-    id: 'bridging', kicker: 'Chapter 1 · Act precisely', layout: 'left', layer: 'twin', twin: HOPPER, mode: 'vib',
+    id: 'bridging', layout: 'left', layer: 'twin', twin: HOPPER, mode: 'vib',
     body: () => (
       <>
         <h2 className="title">Anti-bridging</h2>
@@ -312,7 +312,7 @@ export const SLIDES: Slide[] = [
     notes: 'If the live chart shows a flat step, that is a bridge being cleared.',
   },
   {
-    id: 'smart', kicker: 'Chapter 1 · Act precisely', layout: 'left', layer: 'dash', twin: BACK, mode: 'idle', dash: { tab: 'Stats', focus: 'Overshoot learning' },
+    id: 'smart', layout: 'left', layer: 'dash', twin: BACK, mode: 'idle', dash: { tab: 'Stats', focus: 'Overshoot learning' },
     body: () => (
       <>
         <h2 className="title">Smart correction</h2>
@@ -327,7 +327,7 @@ export const SLIDES: Slide[] = [
     notes: 'Real data from our runs. The next start always uses what the previous runs measured.',
   },
   {
-    id: 'checks', kicker: 'Chapter 2 · Trust the result', layout: 'left', layer: 'dash', twin: BACK, mode: 'idle', dash: { tab: 'Run', focus: 'Pre-start checks' },
+    id: 'checks', layout: 'left', layer: 'dash', twin: BACK, mode: 'idle', dash: { tab: 'Run', focus: 'Pre-start checks' },
     body: () => (
       <>
         <h2 className="title">Pre-start checks</h2>
@@ -337,7 +337,7 @@ export const SLIDES: Slide[] = [
     notes: 'These are the live checks of the station in front of you.',
   },
   {
-    id: 'guards', kicker: 'Chapter 2 · Trust the result', layout: 'left', layer: 'twin', twin: CUP_VIEW, mode: 'nocup',
+    id: 'guards', layout: 'left', layer: 'twin', twin: CUP_VIEW, mode: 'nocup',
     body: () => (
       <>
         <h2 className="title">Guards</h2>
@@ -348,7 +348,7 @@ export const SLIDES: Slide[] = [
     notes: 'LIVE: lift the cup during a dose. Also: no-flow after 4 s, dose timeout, 5 s link watchdog.',
   },
   {
-    id: 'lcd', kicker: 'Chapter 2 · Trust the result', layout: 'left', layer: 'twin', twin: LCD, mode: 'dosing',
+    id: 'lcd', layout: 'left', layer: 'twin', twin: LCD, mode: 'dosing',
     body: () => (
       <>
         <h2 className="title">Readable at the bench</h2>
@@ -359,7 +359,7 @@ export const SLIDES: Slide[] = [
     notes: 'CHECK FIRST: the real LCD must show phase / weight / result. If the firmware does not do it yet, say "the screen is wired and ready" instead.',
   },
   {
-    id: 'record', kicker: 'Chapter 2 · Trust the result', layout: 'left', layer: 'dash', twin: BACK, mode: 'idle', dash: { tab: 'Run', focus: 'Verification record' },
+    id: 'record', layout: 'left', layer: 'dash', twin: BACK, mode: 'idle', dash: { tab: 'Run', focus: 'Verification record' },
     body: () => (
       <>
         <h2 className="title">The verification record</h2>
@@ -370,7 +370,7 @@ export const SLIDES: Slide[] = [
     notes: 'This is the result of the dose we started live. Show History + CSV export if time allows.',
   },
   {
-    id: 'mqtt', kicker: 'Chapter 3 · Ready for a real lab', layout: 'left', layer: 'arch', twin: BACK, mode: 'idle', dim: true,
+    id: 'mqtt', layout: 'left', layer: 'arch', twin: BACK, mode: 'idle', dim: true,
     body: () => (
       <>
         <h2 className="title">Why MQTT</h2>
@@ -381,7 +381,7 @@ export const SLIDES: Slide[] = [
     notes: 'Retained status: a new page sees the state instantly. LWT: offline detected automatically. QoS 1: every result delivered.',
   },
   {
-    id: 'signed', kicker: 'Chapter 3 · Ready for a real lab', layout: 'left', layer: 'arch', twin: BACK, mode: 'idle', dim: true,
+    id: 'signed', layout: 'left', layer: 'arch', twin: BACK, mode: 'idle', dim: true,
     body: () => (
       <>
         <h2 className="title">Signed commands</h2>
@@ -390,17 +390,6 @@ export const SLIDES: Slide[] = [
       </>
     ),
     notes: 'In production: a self-hosted broker, same signing scheme.',
-  },
-  {
-    id: 'stats', kicker: 'Measured gain', layout: 'left', layer: 'dash', twin: BACK, mode: 'idle', dash: { tab: 'Stats', focus: 'Automated vs manual' },
-    body: () => (
-      <>
-        <h2 className="title">Measured, not claimed</h2>
-        <p className="sub">10 automated vs 10 manual doses: same material, same target, same scale.</p>
-        <p className="muted">Mean error · spread (SD) · rejected doses · time per dose</p>
-      </>
-    ),
-    notes: 'Explain the protocol: who did the manual runs, which material. Manual mode records human doses the same way, so the comparison is fair.',
   },
   {
     id: 'brief', kicker: 'The brief', layout: 'wide', layer: 'twin', twin: BACK, mode: 'idle', dim: true,
