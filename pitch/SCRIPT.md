@@ -61,32 +61,29 @@ Powder keeps falling after the stop, so we stop early by the overshoot the stati
 Start stays locked until every check is green.
 
 **16 · Guards (3:15)**
-*(lift the cup if a dose is running)* Remove the cup and the motor stops, and the run is kept as incomplete. Safety lives on the station, not the network.
+*(lift the cup if a dose is running)* Remove the cup and the motor stops, and the run is kept as incomplete. Safety lives on the station.
 
 **17 · Readable at the bench (3:25)**
-The station's own screen shows the current sample. *(Only say "and the result stays there if the link drops" if the real LCD does it.)*
+The station's own screen shows the current sample.
 
 **18 · The verification record (3:35)**
-And here is the record of the dose we just ran: target, measured, deviation, accepted — captured at the source, failures included.
+And here is the record of the dose we just ran: target, measured, deviation, accepted.
 
 **19 · Why MQTT (3:50)**
 The dashboard is a web app, so station and screens meet at a secure broker: the phone controls, the projector watches.
 
-**20 · Signed commands (4:00)**
-Every command is signed, so only our paired dashboard can drive the motor.
-
-**21 · The brief (4:10)**
+**20 · The brief (4:05)**
 The full minimum demo, plus five of the six bonus ideas. Multi-material is the next step.
 
-**22 · One module per material (4:25)**
+**21 · One module per material (4:25)**
 In a real lab: one module per material, no cross-contamination, one dashboard for all, records flowing to the LIMS.
 
-**23 · Roadmap (4:40)**
+**22 · Roadmap (4:40)**
 Next: calibration with check weights, logs stored on the station, operator e-signature — closing the last ALCOA+ gaps.
 
-**24 · Close (4:50)**
-Instructions in, physical action, monitoring, verification, digital record. You just watched all five, live. Thank you.
+**23 · Close (4:50)**
+Instructions in, physical action, monitoring, verification, digital record. That's what we produced in 18 hours. Thank you.
 
 ---
 
-**If time runs short:** skip 9, 17 and 21 (about 30 s).
+**If time runs short:** skip 9, 17 and 20 (about 30 s).

@@ -342,7 +342,6 @@ export const SLIDES: Slide[] = [
       <>
         <h2 className="title">Guards</h2>
         <p className="sub">Cup removed, no flow, timeout, link lost: the motor stops and the run is kept as incomplete.</p>
-        <p className="rule">Safety lives on the ESP32. It never depends on the network.</p>
       </>
     ),
     notes: 'LIVE: lift the cup during a dose. Also: no-flow after 4 s, dose timeout, 5 s link watchdog.',
@@ -353,7 +352,6 @@ export const SLIDES: Slide[] = [
       <>
         <h2 className="title">Readable at the bench</h2>
         <p className="sub">The station's own screen shows the current sample: phase, weight, then the result.</p>
-        <p className="rule">If the link drops, the result stays on the station.</p>
       </>
     ),
     notes: 'CHECK FIRST: the real LCD must show phase / weight / result. If the firmware does not do it yet, say "the screen is wired and ready" instead.',
@@ -364,7 +362,6 @@ export const SLIDES: Slide[] = [
       <>
         <h2 className="title">The verification record</h2>
         <p className="sub">Target, measured, deviation, Accepted / Rejected, sample, trims, overshoot, timestamps.</p>
-        <p className="rule">Captured at the source, at the moment it happens. Failures included.</p>
       </>
     ),
     notes: 'This is the result of the dose we started live. Show History + CSV export if time allows.',
@@ -380,17 +377,7 @@ export const SLIDES: Slide[] = [
     ),
     notes: 'Retained status: a new page sees the state instantly. LWT: offline detected automatically. QoS 1: every result delivered.',
   },
-  {
-    id: 'signed', layout: 'left', layer: 'arch', twin: BACK, mode: 'idle', dim: true,
-    body: () => (
-      <>
-        <h2 className="title">Signed commands</h2>
-        <p className="sub">The broker is public, so every command carries an HMAC-SHA256 signature from the paired dashboard.</p>
-        <p className="muted">Unsigned, forged and replayed commands are rejected by the ESP32 (tested).</p>
-      </>
-    ),
-    notes: 'In production: a self-hosted broker, same signing scheme.',
-  },
+
   {
     id: 'brief', kicker: 'The brief', layout: 'wide', layer: 'twin', twin: BACK, mode: 'idle', dim: true,
     body: () => (
@@ -449,7 +436,7 @@ export const SLIDES: Slide[] = [
     body: () => (
       <>
         <h2 className="display small">Instructions in.<br />Physical action.<br />Monitoring.<br />Verification.<br />Digital record.</h2>
-        <p className="lede">You just watched all five, live. Thank you.</p>
+        <p className="lede">That's what we produced in 18 hours.</p>
       </>
     ),
     notes: 'Close and open the floor.',
